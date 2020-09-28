@@ -1,0 +1,43 @@
+.shotMaker {
+  width: 90vw;
+  display: flex;
+  box-shadow: var(--shotMakerShadow);
+}
+
+.ReactCrop {
+  width: 75%;
+}
+
+.detailShots {
+  width: 25%;
+  background-color: var(--detailShotAreaColor);
+}
+
+.ReactCrop__crop-selection {
+  border: 1.5px solid var(--dragHandleColor);
+  border-radius: 5px;
+}
+
+.ReactCrop__drag-handle {
+  &::after {
+    border-width: 1.5px;
+    border-color: var(--dragHandleColor);
+    background-color: transparent;
+    width: 6px;
+    height: 6px;
+  }
+
+  &.ord-n,
+  &.ord-s,
+  &.ord-w,
+  &.ord-e {
+    display: none;
+  }
+}
+
+.ord-ne::after{
+  border-top-right-radius: 100px;
+  border-bottom: 0px;
+  border-left: 0px;
+  right: 1px;
+}
