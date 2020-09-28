@@ -1,3 +1,17 @@
+@mixin dragHandleStyles(
+  $borderRadiusProperty,
+  $borderToRemoveProperty1,
+  $borderToRemoveProperty2,
+  $distanceProperty1,
+  $distanceProperty2
+) {
+  #{$borderRadiusProperty}: 100px;
+  #{$borderToRemoveProperty1}: transparent;
+  #{$borderToRemoveProperty2}: transparent;
+  #{$distanceProperty1}: -2px;
+  #{$distanceProperty2}: -2px;
+}
+
 .shotMaker {
   width: 90vw;
   display: flex;
@@ -14,17 +28,17 @@
 }
 
 .ReactCrop__crop-selection {
-  border: 1.5px solid var(--dragHandleColor);
+  border: var(--dragHandleBorderWidth) solid var(--dragHandleColor);
   border-radius: 5px;
 }
 
 .ReactCrop__drag-handle {
   &::after {
-    border-width: 1.5px;
+    border-width: var(--dragHandleBorderWidth);
     border-color: var(--dragHandleColor);
     background-color: transparent;
-    width: 6px;
-    height: 6px;
+    width: 9px;
+    height: 9px;
   }
 
   &.ord-n,
@@ -33,11 +47,44 @@
   &.ord-e {
     display: none;
   }
-}
 
-.ord-ne::after{
-  border-top-right-radius: 100px;
-  border-bottom: 0px;
-  border-left: 0px;
-  right: 1px;
+  &.ord-ne::after{
+    @include dragHandleStyles(
+      border-top-right-radius,
+      border-bottom,
+      border-left,
+      top,
+      right
+    );
+  }
+
+  &.ord-nw::after{
+    @include dragHandleStyles(
+      border-top-left-radius,
+      border-bottom,
+      border-right,
+      top,
+      left
+    );
+  }
+
+  &.ord-se::after{
+    @include dragHandleStyles(
+      border-bottom-right-radius,
+      border-top,
+      border-left,
+      bottom,
+      right
+    );
+  }
+
+  &.ord-sw::after{
+    @include dragHandleStyles(
+      border-bottom-left-radius,
+      border-top,
+      border-right,
+      bottom,
+      left
+    );
+  }
 }
