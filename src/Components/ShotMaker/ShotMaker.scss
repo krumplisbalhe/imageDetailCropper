@@ -50,7 +50,7 @@
     display: none;
   }
 
-  &.ord-ne::after{
+  &.ord-ne::after {
     @include dragHandleStyles(
       border-top-right-radius,
       border-bottom,
@@ -60,7 +60,7 @@
     );
   }
 
-  &.ord-nw::after{
+  &.ord-nw::after {
     @include dragHandleStyles(
       border-top-left-radius,
       border-bottom,
@@ -70,7 +70,7 @@
     );
   }
 
-  &.ord-se::after{
+  &.ord-se::after {
     @include dragHandleStyles(
       border-bottom-right-radius,
       border-top,
@@ -80,7 +80,7 @@
     );
   }
 
-  &.ord-sw::after{
+  &.ord-sw::after {
     @include dragHandleStyles(
       border-bottom-left-radius,
       border-top,
