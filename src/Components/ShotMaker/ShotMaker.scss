@@ -14,22 +14,24 @@
 
 .shotMaker {
   width: 90vw;
+  min-height: 50vh;
   display: flex;
   box-shadow: var(--shotMakerShadow);
-}
 
-.ReactCrop {
-  width: 75%;
-}
+  .ReactCrop {
+    width: 75%;
+  }
 
-.detailShots {
-  width: 25%;
-  background-color: var(--detailShotAreaColor);
+  .detailShots {
+    width: 25%;
+    background-color: var(--detailShotAreaColor);
+  }
 }
 
 .ReactCrop__crop-selection {
   border: var(--dragHandleBorderWidth) solid var(--dragHandleColor);
   border-radius: 5px;
+  box-shadow: 0 0 0 9999em rgba(255, 255, 255, 0.5);
 }
 
 .ReactCrop__drag-handle {
@@ -87,4 +89,8 @@
       left
     );
   }
+}
+
+.ReactCrop__drag-bar {
+  display: none;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.scss';
 import ShotMaker from './Components/ShotMaker/ShotMaker.js';
+import './App.scss';
 
 function App() {
   return (
